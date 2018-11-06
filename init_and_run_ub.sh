@@ -3,10 +3,14 @@
 set -e
 
 PROJECT_DIR="/usr/lib/app"
-UB_ARGUMENTS="-u admin -p admin -host http://localhost:8881"
+UB_ARGUMENTS="-u admin -p admin -host http://localhost:80"
 
-mkdir - $PROJECT_DIR/logs
-
+function check_logs() {
+  if [ ! -d "$PROJECT_DIR/logs" ]; then
+    echo "Creating log directory..."
+    mkdir -p $PROJECT_DIR/logs
+  fi
+}
 npm i
 
 npx ubcli createStore

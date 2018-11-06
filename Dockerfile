@@ -13,5 +13,5 @@ COPY ./ub-app/       				/usr/lib/app/
 WORKDIR 				                /usr/lib/app
 #RUN sh init_and_run_ub.sh
 EXPOSE 80 443 8881
-ENTRYPOINT ["sh", "./init_and_run_ub.sh"]
+ENTRYPOINT ["bash", "./init_and_run_ub.sh"]
 CMD ["tail", "-f", "/var/log/wtmp]
