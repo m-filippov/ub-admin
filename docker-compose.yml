@@ -1,0 +1,10 @@
+version: '3.1'
+services:
+  ub-app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8881:8881"
